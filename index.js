@@ -2,7 +2,7 @@ import { extension_settings } from "../../../extensions.js";
 import { saveSettingsDebounced } from "../../../../script.js";
 import { getContext } from "../../../extensions.js";
 
-const extensionName = "chat-exporter";
+const extensionName = "ST-Chat-Exporter";
 const extensionFolderPath = `scripts/extensions/third-party/${extensionName}`;
 
 const defaultSettings = {

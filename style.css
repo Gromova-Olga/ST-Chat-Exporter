@@ -1,0 +1,212 @@
+#ce-modal {
+    position: fixed;
+    /* Убираем жесткие right: 20px и top: 10% */
+    top: 10vh;
+    /* Умное центрирование: центрируется на ПК, но оставляет отступы на мобилках */
+    left: max(5vw, calc(50vw - 240px)); 
+    width: min(480px, 90vw); /* Подстраивается под ширину экрана */
+    min-width: 280px; /* Сузили с 320px для очень маленьких экранов */
+    min-height: 300px;
+    max-height: 85vh; /* Оставили чуть больше пространства по высоте */
+    background: var(--gray-800, #1a1a2e);
+    border: 1px solid var(--border, #444);
+    border-radius: 8px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    font-family: inherit;
+    resize: both;
+    overflow: hidden;
+}
+
+/* Разрешаем элементам падать на новую строку, если они не влезают */
+#ce-search-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap; /* Добавлено */
+}
+
+#ce-modal-footer {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+    flex-wrap: wrap; /* Добавлено */
+}
+
+#ce-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 14px;
+    background: var(--gray-700, #16213e);
+    border-radius: 8px 8px 0 0;
+    cursor: grab;
+    user-select: none;
+    font-weight: bold;
+    font-size: 0.95em;
+}
+
+#ce-modal-header:active { cursor: grabbing; }
+
+#ce-modal-close {
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 1.1em;
+    cursor: pointer;
+    opacity: 0.7;
+    padding: 0 4px;
+}
+#ce-modal-close:hover { opacity: 1; }
+
+#ce-modal-body {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow: hidden;
+    flex: 1;
+}
+
+#ce-range-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+#ce-range-row label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.9em;
+}
+
+#ce-range-row input[type="number"] {
+    width: 64px;
+    padding: 4px 6px;
+    border-radius: 4px;
+    border: 1px solid var(--border, #555);
+    background: var(--gray-900, #0f0f23);
+    color: inherit;
+    text-align: center;
+}
+
+#ce-output-wrapper {
+    flex: 1;
+    min-height: 200px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--border, #555);
+    border-radius: 4px;
+}
+
+#ce-output-display {
+    width: 100%;
+    height: 100%;
+    min-height: 200px;
+    overflow-y: auto;
+    background: var(--gray-900, #0f0f23);
+    color: inherit;
+    padding: 10px;
+    font-family: monospace;
+    font-size: 0.85em;
+    line-height: 1.5;
+    box-sizing: border-box;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+#ce-output {
+    display: none;
+}
+
+.ce-highlight {
+    background: rgba(255, 200, 0, 0.35);
+    border-radius: 2px;
+    color: inherit;
+}
+
+.ce-highlight-active {
+    background: rgba(255, 160, 0, 0.7);
+    color: #000;
+    border-radius: 2px;
+}
+
+#ce-modal-footer {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+}
+
+#ce-specific {
+    flex: 1;
+    min-width: 120px;
+    padding: 4px 6px;
+    border-radius: 4px;
+    border: 1px solid var(--border, #555);
+    background: var(--gray-900, #0f0f23);
+    color: inherit;
+    font-size: 0.85em;
+    box-sizing: border-box;
+}
+
+#ce-range-row .ce-separator {
+    opacity: 0.4;
+    font-size: 0.8em;
+}
+
+#ce-filter-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+#ce-filter-row label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.9em;
+}
+
+#ce-author-filter {
+    padding: 4px 6px;
+    border-radius: 4px;
+    border: 1px solid var(--border, #555);
+    background: var(--gray-900, #0f0f23);
+    color: inherit;
+    font-size: 0.85em;
+    cursor: pointer;
+}
+
+#ce-search-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#ce-search {
+    flex: 1;
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: 1px solid var(--border, #555);
+    background: var(--gray-900, #0f0f23);
+    color: inherit;
+    font-size: 0.85em;
+}
+
+#ce-search-prev,
+#ce-search-next {
+    padding: 4px 8px !important;
+    min-width: 32px;
+}
+
+#ce-search-info {
+    font-size: 0.8em;
+    opacity: 0.6;
+    min-width: 60px;
+    text-align: center;
+}

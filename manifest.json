@@ -1,11 +1,11 @@
 {
-  "display_name": "Chat Exporter",
+  "display_name": "ST-Chat-Exporter",
   "loading_order": 100,
   "requires": [],
   "optional": [],
   "js": "index.js",
   "css": "style.css",
-  "author": "you",
+  "author": "Gromova-Olga",
   "version": "1.0.0",
-  "homePage": "https://github.com/username/chat-exporter"
+  "homePage": "https://github.com/Gromova-Olga/ST-Chat-Exporter"
 }

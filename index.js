@@ -224,6 +224,11 @@ function openExporterWindow() {
 
     $("body").append(modal);
 
+    // Изолируем касания внутри тела модалки, чтобы ST не перехватывал их своими свайп-меню
+    $("#ce-modal-body").on("touchstart touchmove", function(e) {
+        e.stopPropagation();
+    });
+
     // Закрытие
     $("#ce-modal-close").on("click", () => $("#ce-modal").hide());
 

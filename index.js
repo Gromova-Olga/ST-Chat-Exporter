@@ -222,12 +222,17 @@ function openExporterWindow() {
         </div>
     `);
 
-    $("body").append(modal);
+   $("body").append(modal);
 
-    // Изолируем касания внутри тела модалки, чтобы ST не перехватывал их своими свайп-меню
-    $("#ce-modal-body").on("touchstart touchmove", function(e) {
-        e.stopPropagation();
-    });
+    // Бронебойная изоляция скролла от движка SillyTavern
+    const modalBody = document.getElementById("ce-modal-body");
+    const stopPropagation = (e) => e.stopPropagation();
+
+    // Используем нативные методы с { passive: true }, чтобы не конфликтовать с браузером
+    modalBody.addEventListener("touchstart", stopPropagation, { passive: true });
+    modalBody.addEventListener("touchmove", stopPropagation, { passive: true });
+    modalBody.addEventListener("touchend", stopPropagation, { passive: true });
+    modalBody.addEventListener("wheel", stopPropagation, { passive: true });
 
     // Закрытие
     $("#ce-modal-close").on("click", () => $("#ce-modal").hide());

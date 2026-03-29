@@ -66,7 +66,7 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    overflow: hidden;
+    overflow-y: auto; /* Поменяли hidden на auto для горизонтальной ориентации телефона */
     flex: 1;
 }
 
@@ -117,6 +117,11 @@
     box-sizing: border-box;
     white-space: pre-wrap;
     word-break: break-word;
+    
+    /* === ДОБАВЛЕНО ДЛЯ МОБИЛЬНЫХ === */
+    -webkit-overflow-scrolling: touch; /* Возвращает инерцию плавному скроллу на iOS Safari */
+    overscroll-behavior: contain;      /* Запрещает скроллить основную страницу, когда мы достигли дна элемента */
+    touch-action: pan-y;               /* Явно разрешает браузеру только вертикальный скролл */
 }
 
 #ce-output {
